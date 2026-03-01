@@ -695,7 +695,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 16
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -751,61 +751,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6966116893221068883, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -6966116893221068883, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: applePrefab
-      value: 
-      objectReference: {fileID: 1177425811122371822, guid: ae77ec3aaa5e94b849f14ec66998687f, type: 3}
-    - target: {fileID: -6966116893221068883, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: appleDropDelay
-      value: 0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: -6966116893221068883, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: changeDirChance
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: -6966116893221068883, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: leftAndRightEdge
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: -2157731151893080598, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2093500665126410631, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2388691318575230135, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3224299684678816942, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
       propertyPath: m_Name
       value: AppleTree
-      objectReference: {fileID: 0}
-    - target: {fileID: 3224299684678816942, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3862624060409887885, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7545944656968036122, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7545944656968036122, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7545944656968036122, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7545944656968036122, guid: 326d17715b3014249a70385b3bcc1525, type: 3}
       propertyPath: m_LocalPosition.x

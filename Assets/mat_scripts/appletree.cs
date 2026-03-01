@@ -42,7 +42,7 @@ public class AppleTree : MonoBehaviour {
         } else if ( pos.x > leftAndRightEdge ) {
             speed = -Mathf.Abs( speed );  // Move left
         }
-    } // ← This closing brace was missing!
+    } 
    
     void FixedUpdate() {
         // Random direction changes (time-based)
