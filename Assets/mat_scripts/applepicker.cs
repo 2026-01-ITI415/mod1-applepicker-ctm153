@@ -22,18 +22,21 @@ public class ApplePicker : MonoBehaviour {
         }
     }
 
-    public void AppleMissed() {
-        GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
-        foreach ( GameObject tempGO in appleArray ) {
-            Destroy( tempGO );
-        }
+public void AppleMissed() {
+    if ( basketList.Count == 0 ) return; // Guard against double-call
 
-        int basketIndex = basketList.Count -1;
-        GameObject basketGo = basketList[basketIndex];
-        basketList.RemoveAt( basketIndex ); 
-        Destroy( basketGo );
-        if ( basketList.Count == 0 ) {
-            SceneManager.LoadScene( "_Scene_0");
-        }
+    GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
+    foreach ( GameObject tempGO in appleArray ) {
+        Destroy( tempGO );
     }
+
+    int basketIndex = basketList.Count - 1;
+    GameObject basketGo = basketList[basketIndex];
+    basketList.RemoveAt( basketIndex );
+    Destroy( basketGo );
+
+    if ( basketList.Count == 0 ) {
+        SceneManager.LoadScene("_Scene_0");
+    }
+}
 }

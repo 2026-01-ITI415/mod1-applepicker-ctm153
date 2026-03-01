@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HighScore : MonoBehaviour {
     static private Text _uiText;
-    static private int _score = 1000;
+    static private int _score = 0;
 
     [Tooltip("Check this box to reset the HighScore in PlayerPrefs")]
     public bool resetHighScoreNow = false;
@@ -37,11 +37,11 @@ public class HighScore : MonoBehaviour {
 void OnDrawGizmos() {
     if (resetHighScoreNow) {
         resetHighScoreNow = false;
-        PlayerPrefs.SetInt("HighScore", 1000);
+        PlayerPrefs.SetInt("HighScore", 0);
         if (_uiText != null) {
             _uiText.text = "High Score: 1,000";
         }
-        Debug.LogWarning("PlayerPrefs HighScore reset to 1,000");
+        Debug.LogWarning("PlayerPrefs HighScore reset to 0");
         }
     }
 }

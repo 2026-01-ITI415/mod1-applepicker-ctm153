@@ -10,10 +10,11 @@ public class ScoreCounter : MonoBehaviour {
     private Text uiText;
 
     void Start() {
-        uiText = GetComponent<Text>();
-    }
+    uiText = GetComponent<Text>();
+    if (uiText == null) Debug.LogError("ScoreCounter: No Text component found!", this);
+}
 
-    void Update() {
-        uiText.text = score.ToString( "#,0" ); // This 0 is a zero!
-    }
+void Update() {
+    if (uiText != null) uiText.text = score.ToString("#,0");
+}
 }

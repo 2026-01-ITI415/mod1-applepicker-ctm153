@@ -19,35 +19,29 @@ public class AppleTree : MonoBehaviour {
     // Seconds between Apples instantiations
     public float        appleDropDelay = 1f;
 
-    void Start () {
-        // Start dropping apples
-        Invoke( "DropApple", 2f );
+void Start () {
+    InvokeRepeating("DropApple", 2f, appleDropDelay);
+}
+
+void DropApple() {
+    GameObject apple = Instantiate<GameObject>( applePrefab );
+    apple.transform.position = transform.position;
+}
+
+void Update () {
+    Vector3 pos = transform.position;
+    pos.x += speed * Time.deltaTime;
+    transform.position = pos;
+
+    if ( pos.x < -leftAndRightEdge ) {
+        speed = Mathf.Abs( speed );
+    } else if ( pos.x > leftAndRightEdge ) {
+        speed = -Mathf.Abs( speed );
     }
 
-    void DropApple() {
-        GameObject apple = Instantiate<GameObject>( applePrefab );
-        apple.transform.position = transform.position;
-        Invoke( "DropApple", appleDropDelay );
+    // Random direction change moved here, where Time.deltaTime applies
+    if ( Random.value < changeDirChance * Time.deltaTime ) {
+        speed *= -1;
     }
-
-    void Update () {
-        // Basic Movement
-        Vector3 pos = transform.position;
-        pos.x += speed * Time.deltaTime;  // Only this line for movement
-        transform.position = pos;
-        
-        // Changing Direction at edges
-        if ( pos.x < -leftAndRightEdge ) {
-            speed = Mathf.Abs( speed );   // Move right
-        } else if ( pos.x > leftAndRightEdge ) {
-            speed = -Mathf.Abs( speed );  // Move left
-        }
-    } 
-   
-    void FixedUpdate() {
-        // Random direction changes (time-based)
-        if ( Random.value < changeDirChance ) {
-            speed *= -1; // Change direction 
-        }
-    }
+}
 }
